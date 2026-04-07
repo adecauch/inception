@@ -14,8 +14,9 @@ RUN apt-get update && apt-get install -y \
     && rm -rf /var/lib/apt/lists/*
 
 RUN curl -L https://github.com/wp-cli/wp-cli/releases/download/v2.11.0/wp-cli-2.11.0.phar \
-    -o /usr/local/bin/wp \
-    && chmod +x /usr/local/bin/wp
+    -o /usr/local/bin/wp-cli.phar \
+    && chmod +x /usr/local/bin/wp-cli.phar \
+    && ln -s /usr/local/bin/wp-cli.phar /usr/local/bin/wp
 
 COPY conf/www.conf /etc/php/8.2/fpm/pool.d/www.conf
 COPY tools/init.sh /init.sh
