@@ -33,6 +33,13 @@ services:
       - mariadb
     restart: unless-stopped
 
+  redis:
+    build: requirements/bonus/redis
+    container_name: redis
+    networks:
+      - inception
+    restart: unless-stopped
+
   nginx:
     build: requirements/nginx
     container_name: nginx
