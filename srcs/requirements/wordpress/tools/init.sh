@@ -33,18 +33,18 @@ if [ ! -f /var/www/html/wordpress/wp-config.php ]; then
 		--user_pass=${WP_USER_PASSWORD} \
 		--allow-root
 
-	wp plugin install redis-cache --activate \
-		--path=/var/www/html/wordpress \
-		--allow-root
-
-	wp config set WP_REDIS_HOST redis \
-		--path=/var/www/html/wordpress \
-		--allow-root
-
-	wp redis enable \
-		--path=/var/www/html/wordpress \
-		--allow-root
-
 fi
+
+wp plugin install redis-cache --activate \
+	--path=/var/www/html/wordpress \
+	--allow-root
+
+wp config set WP_REDIS_HOST redis \
+	--path=/var/www/html/wordpress \
+	--allow-root
+
+wp redis enable \
+	--path=/var/www/html/wordpress \
+	--allow-root
 
 exec php-fpm8.2 -F
