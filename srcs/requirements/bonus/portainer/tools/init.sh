@@ -1,5 +1,5 @@
 #!/bin/bash
 
-HASH=$(htpasswd -nbB "${PORTAINER_USER}" "${PORTAINER_PASSWORD}" | cut -d: -f2)
+HASH=$(htpasswd -nbB admin "${PORTAINER_PASSWORD}" | cut -d: -f2)
 
-exec /opt/portainer/portainer --admin-username "${PORTAINER_USER}" --admin-password "${HASH}"
+exec /opt/portainer/portainer --admin-password "${HASH}"
