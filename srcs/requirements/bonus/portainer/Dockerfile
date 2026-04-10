@@ -12,13 +12,12 @@
 
 FROM debian:bookworm
 
-ARG TARGETARCH
-
 RUN apt-get update && apt-get install -y \
     wget \
     && rm -rf /var/lib/apt/lists/*
 
-RUN wget -q https://github.com/portainer/portainer/releases/download/2.21.5/portainer-2.21.5-linux-${TARGETARCH}.tar.gz \
+RUN ARCH=$(dpkg --print-architecture) \
+    && wget -q https://github.com/portainer/portainer/releases/download/2.21.5/portainer-2.21.5-linux-${ARCH}.tar.gz \
     -O /tmp/portainer.tar.gz \
     && tar -xzf /tmp/portainer.tar.gz -C /opt \
     && rm /tmp/portainer.tar.gz
