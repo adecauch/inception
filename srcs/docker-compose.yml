@@ -6,7 +6,7 @@
 #    By: adecauch <adecauch@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/04/08 11:50:52 by adecauch          #+#    #+#              #
-#    Updated: 2026/04/10 10:35:22 by adecauch         ###   ########.fr        #
+#    Updated: 2026/04/10 11:38:20 by adecauch         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -71,6 +71,17 @@ services:
       - inception
     depends_on:
       - mariadb
+    restart: unless-stopped
+
+  portainer:
+    build: requirements/bonus/portainer
+    container_name: portainer
+    ports:
+      - "9000:9000"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    networks:
+      - inception
     restart: unless-stopped
 
   nginx:
