@@ -1,0 +1,124 @@
+<!-- *********************************************************************** -->
+<!--                                                                         -->
+<!--                                                      :::      ::::::::  -->
+<!-- index.html                                         :+:      :+:    :+:  -->
+<!--                                                  +:+ +:+         +:+    -->
+<!-- By: adecauch <adecauch@student.42.fr>          +#+  +:+       +#+       -->
+<!--                                              +#+#+#+#+#+   +#+          -->
+<!-- Created: 2026/04/10 10:37:50 by adecauch          #+#    #+#            -->
+<!-- Updated: 2026/04/10 10:38:08 by adecauch         ###   ########.fr      -->
+<!--                                                                         -->
+<!-- *********************************************************************** -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>adecauch | 42</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #0a0a0a;
+            color: #e0e0e0;
+            font-family: 'Courier New', monospace;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .logo {
+            font-size: 5rem;
+            font-weight: bold;
+            color: #00babc;
+            letter-spacing: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .subtitle {
+            font-size: 1rem;
+            color: #666;
+            margin-bottom: 3rem;
+            letter-spacing: 0.3rem;
+        }
+
+        .card {
+            background: #111;
+            border: 1px solid #222;
+            border-left: 3px solid #00babc;
+            padding: 2rem 3rem;
+            margin: 0 auto;
+            max-width: 600px;
+        }
+
+        .card h2 {
+            font-size: 1.4rem;
+            color: #00babc;
+            margin-bottom: 1.5rem;
+        }
+
+        .card p {
+            color: #999;
+            line-height: 1.8;
+            margin-bottom: 0.8rem;
+        }
+
+        .tag {
+            display: inline-block;
+            background: #1a1a1a;
+            border: 1px solid #333;
+            color: #00babc;
+            padding: 0.3rem 0.8rem;
+            margin: 0.3rem;
+            font-size: 0.85rem;
+        }
+
+        .tags {
+            margin-top: 1.5rem;
+        }
+
+        .footer {
+            margin-top: 3rem;
+            color: #333;
+            font-size: 0.8rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">42</div>
+        <div class="subtitle">INCEPTION PROJECT</div>
+
+        <div class="card">
+            <h2>adecauch</h2>
+            <p>This infrastructure runs entirely inside Docker containers,
+            orchestrated with Docker Compose.</p>
+            <p>Each service is isolated, communicates over a private bridge
+            network, and persists data through named volumes.</p>
+            <div class="tags">
+                <span class="tag">NGINX</span>
+                <span class="tag">WordPress</span>
+                <span class="tag">MariaDB</span>
+                <span class="tag">Redis</span>
+                <span class="tag">FTP</span>
+                <span class="tag">Docker</span>
+            </div>
+        </div>
+
+        <div class="footer">
+            &copy; 2026 adecauch.42.fr
+        </div>
+    </div>
+</body>
+</html>

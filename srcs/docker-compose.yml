@@ -6,7 +6,7 @@
 #    By: adecauch <adecauch@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/04/08 11:50:52 by adecauch          #+#    #+#              #
-#    Updated: 2026/04/10 10:24:59 by adecauch         ###   ########.fr        #
+#    Updated: 2026/04/10 10:35:22 by adecauch         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -51,6 +51,26 @@ services:
     container_name: redis
     networks:
       - inception
+    restart: unless-stopped
+
+  website:
+    build: requirements/bonus/website
+    container_name: website
+    ports:
+      - "80:80"
+    networks:
+      - inception
+    restart: unless-stopped
+
+  adminer:
+    build: requirements/bonus/adminer
+    container_name: adminer
+    ports:
+      - "8080:8080"
+    networks:
+      - inception
+    depends_on:
+      - mariadb
     restart: unless-stopped
 
   nginx:
