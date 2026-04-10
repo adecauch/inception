@@ -14,6 +14,7 @@ FROM debian:bookworm
 
 RUN apt-get update && apt-get install -y \
     wget \
+    apache2-utils \
     && rm -rf /var/lib/apt/lists/*
 
 RUN ARCH=$(dpkg --print-architecture) \
@@ -22,6 +23,10 @@ RUN ARCH=$(dpkg --print-architecture) \
     && tar -xzf /tmp/portainer.tar.gz -C /opt \
     && rm /tmp/portainer.tar.gz
 
+COPY tools/init.sh /init.sh
+
+RUN chmod +x /init.sh
+
 EXPOSE 9000 8000
 
-CMD ["/opt/portainer/portainer"]
+ENTRYPOINT ["/init.sh"]
