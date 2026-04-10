@@ -71,7 +71,10 @@ http://adecauch.42.fr:8080/adminer.php
 ```
 http://adecauch.42.fr:9000
 ```
-Create an admin account on first visit. You can then view all running containers, logs, volumes, and networks.
+- Username: `admin`
+- Password: value of `PORTAINER_PASSWORD` in `.env`
+
+You can view all running containers, logs, volumes, and networks.
 
 **FTP (WordPress files):**
 ```
@@ -90,6 +93,7 @@ All credentials are stored in `srcs/.env` on the VM (never committed to git):
 | `WP_ADMIN_USER` / `WP_ADMIN_PASSWORD` | WordPress administrator |
 | `WP_USER` / `WP_USER_PASSWORD` | WordPress regular user |
 | `FTP_USER` / `FTP_PASSWORD` | FTP login |
+| `PORTAINER_PASSWORD` | Portainer login (username is always `admin`) |
 
 ## Checking that services are running
 

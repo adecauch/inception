@@ -65,7 +65,7 @@ MYSQL_USER=wpuser
 MYSQL_PASSWORD=<your_password>
 MYSQL_ROOT_PASSWORD=<your_root_password>
 DOMAIN_NAME=adecauch.42.fr
-WP_ADMIN_USER=<admin_username>
+WP_ADMIN_USER=<admin_username>     # Must not contain "admin" or "administrator"
 WP_ADMIN_PASSWORD=<admin_password>
 WP_ADMIN_EMAIL=<admin_email>
 WP_USER=<user_username>
@@ -73,6 +73,7 @@ WP_USER_EMAIL=<user_email>
 WP_USER_PASSWORD=<user_password>
 FTP_USER=<ftp_username>
 FTP_PASSWORD=<ftp_password>
+PORTAINER_PASSWORD=<portainer_password>
 ```
 
 Add the domain to `/etc/hosts` on both the VM and the host machine:

@@ -84,6 +84,7 @@ WP_USER_EMAIL=<email>
 WP_USER_PASSWORD=<password>
 FTP_USER=<ftp_username>
 FTP_PASSWORD=<ftp_password>
+PORTAINER_PASSWORD=<portainer_password>   # Login: admin / <portainer_password>
 ```
 
 Add the domain to `/etc/hosts`:
