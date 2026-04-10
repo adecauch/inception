@@ -6,7 +6,7 @@
 #    By: adecauch <adecauch@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/04/08 11:50:52 by adecauch          #+#    #+#              #
-#    Updated: 2026/04/08 11:54:27 by adecauch         ###   ########.fr        #
+#    Updated: 2026/04/10 10:24:59 by adecauch         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,6 +31,19 @@ services:
       - inception
     depends_on:
       - mariadb
+    restart: unless-stopped
+
+  ftp:
+    build: requirements/bonus/ftp
+    container_name: ftp
+    env_file: .env
+    ports:
+      - "21:21"
+      - "21000-21010:21000-21010"
+    volumes:
+      - wordpress:/var/www/html/wordpress
+    networks:
+      - inception
     restart: unless-stopped
 
   redis:
